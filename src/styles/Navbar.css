@@ -9,10 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: white;
-  border-bottom-style: solid;
-  border-bottom-color: #dcdcdc;
-  border-bottom-width: 0px;
+  background-color: rgb(181, 181, 181);
   height: 60px;
   margin-bottom: 20px;
 }
@@ -23,7 +20,7 @@
 }
 
 .dark-logo{
-    color: #333333;
+    color: #272562;
 }
 
 .middle-items {

@@ -1,15 +1,17 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { ThemeContext } from '../App'
 
 import '../styles/Navbar.css'
 
 export const Navbar = () => {
-  let [darkTheme, setDarkTheme] = useState(false);
-  let location = useLocation();
+  const {updateTheme, darkTheme} = useContext(ThemeContext)
 
+  let location = useLocation();
+  
   return (
     <>
     {
@@ -32,7 +34,8 @@ export const Navbar = () => {
             type="button"
             className="theme-button"
             testid="theme"
-            onClick={() => setDarkTheme(!darkTheme)}
+            onClick={() => updateTheme(!darkTheme)}
+            
           >
             <img
               src="https://assets.ccbp.in/frontend/react-js/dark-theme-img.png"
@@ -60,7 +63,8 @@ export const Navbar = () => {
             type="button"
             className="theme-button"
             testid="theme"
-            onClick={() => setDarkTheme(!darkTheme)}
+            onClick={() => updateTheme(!darkTheme)}
+            
           >
             <img
               src="https://assets.ccbp.in/frontend/react-js/light-theme-img.png"

@@ -1,3 +1,11 @@
 .greetings{
     text-align: center;
 }
+
+.home-dark strong{
+    color: #93610b;
+}
+
+.home-light strong{
+    color: #07409c;
+}
