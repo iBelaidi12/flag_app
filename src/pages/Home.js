@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { useQuery } from 'react-query'
+import { Country } from '../components/Country'
 
 
 const fetchCountries = async () => {
@@ -37,231 +38,26 @@ export const Home = () => {
             {
               !isLoading && (
                 <div className="countries-container">
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
+                  {/* <div className="country">
+                    <div className="flag-container">
+                      <img
+                        src={data[23]?.flags.svg}
+                        width="30"
+                        alt="Algeria"
+                        className='flag-img'
+                      />
+                    </div>
+                    <div className="code">
+                      <h2>{data[23]?.cca2}</h2>
+                    </div>
+                    <div className="name">
+                      <h3>{data[23]?.name.common}</h3>
+                    </div>
+                  </div> */}
+                  {data.map((country, key) => {
+                    return <Country code={country.cca2} name={country.name.common} key={key} />
+                  })}
                 </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div>
-                <div className="country">
-                  <div className="flag-container">
-                    <img
-                      src={data[23]?.flags.svg}
-                      width="30"
-                      alt="Algeria"
-                      className='flag-img'
-                    />
-                  </div>
-                  <div className="code">
-                    <h2>{data[23]?.cca2}</h2>
-                  </div>
-                  <div className="name">
-                    <h3>{data[23]?.name.common}</h3>
-                  </div>
-                </div> 
-              </div>
               )
             }
           </div>
