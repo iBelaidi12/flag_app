@@ -34,134 +34,236 @@ export const Home = () => {
                 <FontAwesomeIcon icon={faSearch} className='icon'/>
               </div>
             </div>
-            <div className="countries-container">
-              <div className="country">
-                <div className="flag">
-                  <img
-                    src={data[23].flags.svg}
-                    width="30"
-                    alt="Algeria"
-                    className='flag-img'
-                  />
+            {
+              !isLoading && (
+                <div className="countries-container">
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
                 </div>
-                <div className="code">
-                  {data[23].cca2}
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
                 </div>
-                <div className="name">
-                {data[23].name.common}
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
                 </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div>
+                <div className="country">
+                  <div className="flag-container">
+                    <img
+                      src={data[23]?.flags.svg}
+                      width="30"
+                      alt="Algeria"
+                      className='flag-img'
+                    />
+                  </div>
+                  <div className="code">
+                    <h2>{data[23]?.cca2}</h2>
+                  </div>
+                  <div className="name">
+                    <h3>{data[23]?.name.common}</h3>
+                  </div>
+                </div> 
               </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-              <div className="country">
-                <div className="flag">
-                  img
-                </div>
-                <div className="code">
-                  DZ
-                </div>
-                <div className="name">
-                  Algerie
-                </div>
-              </div>
-            </div>
+              )
+            }
           </div>
         </div>
       ) : 

@@ -1,3 +1,7 @@
+:root{
+    --secondary-color-dark: #e3930a;
+}
+
 .greetings{
     text-align: center;
 }
@@ -10,7 +14,7 @@
 }
 
 .home-dark strong{
-    color: #93610b;
+    color: var(--secondary-color-dark);
 }
 
 .home-light strong{
@@ -58,7 +62,7 @@
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 7px;
-    color: #93610b;
+    color: var(--secondary-color-dark);
 }
 
 .countries-container{
@@ -72,16 +76,36 @@
 }
 
 .country{
-    border: solid 1px white;
+    border: solid 1px rgba(255, 255, 255, 0.623);
     width: 200px;
     height: 220px;
+    background-color: #212121;
+    border-radius: 10px;
 }
 
-.flag{
-
-}
 
 .flag-img{
     width: 200px;
     height: 120px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;    
+}
+
+.flag-img:hover{
+    filter: brightness(1.05);
+    cursor: pointer;
+}
+.code{
+    text-align: center;
+    margin-top: 10px;
+    color: var(--secondary-color-dark);
+    font-weight: bolder;
+}
+
+.name{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bolder;
+    
 }
