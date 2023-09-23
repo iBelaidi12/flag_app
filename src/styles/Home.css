@@ -78,16 +78,30 @@
 .country{
     border: solid 1px rgba(255, 255, 255, 0.623);
     width: 200px;
-    height: 220px;
+    height: 228px;
     background-color: #212121;
     border-radius: 10px;
 }
 
+.special .flag-img{
+    opacity: 0;
+}
+
+.special .flag-container {
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;  
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 .flag-container{
     width: 200px;
     height: 120px; 
 }
+
+
+
 
 .flag-img{
     width: 200px;
@@ -97,8 +111,9 @@
     border-bottom-right-radius: 0;    
 }
 
-.flag-img:hover{
-    filter: brightness(1.05);
+
+.flag-container:hover{
+    filter: brightness(1.2);
     cursor: pointer;
 }
 .code{
@@ -114,3 +129,43 @@
     font-weight: bolder;
     
 }
+
+.ch{
+    background-color: #ff0000;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;  
+}
+
+.br{
+    background-color: #009b3a;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;  
+}
+
+.kr{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;  
+}
+
+.ca{
+    background: linear-gradient(to right, red 0%, red 25%, white 25%, white 75%, red 75%, red 100%);
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;  
+}
+
+.ng{
+    background: linear-gradient(to right, #008751 0%, #008751 33.3%, white 33.3%, white 66.7%, #008751 66.7%, #008751 100%);
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;  
+}
+
+.ng .flag-img{
+    display: none;
+}
+

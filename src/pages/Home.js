@@ -14,9 +14,27 @@ const fetchCountries = async () => {
   return response.data
 }
 
+let nonTolerated = [
+  "IL", "IO", "BL", "PG", "HM", "TV", "LC", "FM", "GP", "GE", "SH", "GG", "SS", "PN",
+  "UM", "HN", "JM", "NE", "MP", "AG", "TJ", "VA", "GU", "DM", "ST", "CG", "TC", "CC",
+  "SB", "AX", "GI", "MR", "ZW", "BA", "TZ", "FO", "VI", "PM", "SJ", "IO", "IL", "IO", "MQ",
+  "NA", "WF", "KN", "MK", "NP", "VC", "GB"
+]
+const isTolerated = (code) => {
+  return !nonTolerated.includes(code) ? true : false
+}
+
 export const Home = () => {
   const {darkTheme} = useContext(ThemeContext)
   const {data, isLoading, isError} = useQuery('countries', fetchCountries)
+
+  //Sorting the data
+  if(!isLoading){
+    var dataSorted = [...data].sort((a, b) => {
+      return a.name.common.localeCompare(b.name.common);
+    })
+
+  }
 
   return (
     <>
@@ -38,24 +56,9 @@ export const Home = () => {
             {
               !isLoading && (
                 <div className="countries-container">
-                  {/* <div className="country">
-                    <div className="flag-container">
-                      <img
-                        src={data[23]?.flags.svg}
-                        width="30"
-                        alt="Algeria"
-                        className='flag-img'
-                      />
-                    </div>
-                    <div className="code">
-                      <h2>{data[23]?.cca2}</h2>
-                    </div>
-                    <div className="name">
-                      <h3>{data[23]?.name.common}</h3>
-                    </div>
-                  </div> */}
-                  {data.map((country, key) => {
-                    return <Country code={country.cca2} name={country.name.common} key={key} />
+                  {
+                    dataSorted.map((country, key) => {
+                      return isTolerated(country.cca2) && <Country code={country.cca2} name={country.name.common} key={key} />
                   })}
                 </div>
               )
