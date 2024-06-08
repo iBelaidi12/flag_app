@@ -31,30 +31,15 @@ function App() {
   return (
     <QueryClientProvider client={client}>
       <ThemeContext.Provider value={{darkTheme, updateTheme}}>
-      {
-        !darkTheme ? (
-          <div className="App">
-            <Router>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-              </Routes>
-            </Router>
-          </div>
-        ) : 
-        (
-          <div className="App">
-            <Router>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-              </Routes>
-            </Router>
-          </div>
-        )
-      }
+        <div className="App">
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </Router>
+        </div>
       </ThemeContext.Provider>
     </QueryClientProvider>
 
