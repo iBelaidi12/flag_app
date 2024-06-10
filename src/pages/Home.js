@@ -4,14 +4,9 @@ import { ThemeContext } from "../App";
 import { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
-import { useQuery } from "react-query";
 import { Country } from "../components/Country";
+import all_countries from '../all_countries.json'
 
-const fetchCountries = async () => {
-  const response = await axios.get("https://restcountries.com/v3.1/all");
-  return response.data;
-};
 
 let nonTolerated = [
   "IL",
@@ -72,15 +67,13 @@ const isTolerated = (code) => {
 
 export const Home = () => {
   const { darkTheme } = useContext(ThemeContext);
-  const { data, isLoading, isError } = useQuery("countries", fetchCountries);
-
 
   let [inputCountry, setInputCountry] = useState("");
   let [dataFiltred, setDataFiltred] = useState([]);
 
   useEffect(() => {
-    if(!isLoading && data){
-      var dataSorted = [...data].sort((a, b) => {
+    if(all_countries){
+      var dataSorted = [...all_countries].sort((a, b) => {
         return a.name.common.localeCompare(b.name.common);
       });
       }
@@ -92,7 +85,7 @@ export const Home = () => {
           country.name.common.toLowerCase().includes(inputCountry.toLowerCase())
       ))
       }
-  }, [inputCountry, data, isLoading])
+  }, [inputCountry, all_countries])
 
   return (
     <>
@@ -119,21 +112,19 @@ export const Home = () => {
                 <FontAwesomeIcon icon={faSearch} className="icon" />
               </div>
             </div>
-            {!isLoading && (
-              <div className="countries-container">
-                {dataFiltred.map((country, key) => {
-                  return (
-                    isTolerated(country.cca2) && (
-                      <Country
-                        code={country.cca2}
-                        name={country.name.common}
-                        key={key}
-                      />
-                    )
-                  );
-                })}
-              </div>
-            )}
+            <div className="countries-container">
+              {dataFiltred.map((country, key) => {
+                return (
+                  isTolerated(country.cca2) && (
+                    <Country
+                      code={country.cca2}
+                      name={country.name.common}
+                      key={key}
+                    />
+                  )
+                );
+              })}
+            </div>
           </div>
         </div>
       ) : (
