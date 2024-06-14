@@ -82,7 +82,7 @@ export const Home = () => {
       }
       else{
         setDataFiltred([...dataSorted].filter((country) => 
-          country.name.common.toLowerCase().includes(inputCountry.toLowerCase())
+          country.name.common.toLowerCase().startsWith(inputCountry.toLowerCase())
       ))
       }
   }, [inputCountry, all_countries])
@@ -136,6 +136,33 @@ export const Home = () => {
             <h2>
               Take a <strong>look</strong> !
             </h2>
+          </div>
+          <div className="main-container">
+            <div className="big-input-container">
+              <div className="mini-input-container">
+                <input
+                  onChange={(event) => setInputCountry(event.target.value)}
+                  type="text"
+                  name="input-flag"
+                  id="input-flag"
+                  placeholder="Search for a country"
+                />
+                <FontAwesomeIcon icon={faSearch} className="icon" />
+              </div>
+            </div>
+            <div className="countries-container">
+              {dataFiltred.map((country, key) => {
+                return (
+                  isTolerated(country.cca2) && (
+                    <Country
+                      code={country.cca2}
+                      name={country.name.common}
+                      key={key}
+                    />
+                  )
+                );
+              })}
+            </div>
           </div>
         </div>
       )}

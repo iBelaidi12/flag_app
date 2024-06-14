@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat&display=swap');
 
+:root{
+  --light-1 : #e4f2fd ;
+  --light-2 : #bbdefa;
+  --light-3 : #bbdefa;
+  --light-4 : #64b5f6;
+  --light-5 : #42a5f6;
+  --light-6 : #2196f3;
+  --light-7 : #1d89e4;
+  --light-8 : #1976d3;
+  --light-9 : #1564c0;
+  --light-10: #0e47a1; 
+}
+
 body, *{
   margin: 0;
   padding: 0;
@@ -7,7 +20,7 @@ body, *{
 
 body{
   font-family: 'Montserrat', sans-serif;
-  background-color: #FFFFFf;
+  background-color: var(--light-1);
 }
 
 .dark-theme{

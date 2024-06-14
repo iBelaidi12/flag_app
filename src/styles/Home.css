@@ -1,5 +1,18 @@
 :root{
     --secondary-color-dark: #e3930a;
+    --secondary-color-light: #07409c;
+
+    --light-1 : #e4f2fd;
+    --light-2 : #bbdefa;
+    --light-3 : #bbdefa;
+    --light-4 : #64b5f6;
+    --light-5 : #42a5f6;
+    --light-6 : #2196f3;
+    --light-7 : #1d89e4;
+    --light-8 : #1976d3;
+    --light-9 : #1564c0;
+    --light-10: #0e47a1; 
+    --light-11: #0f2b58;
 }
 
 .greetings{
@@ -17,11 +30,7 @@
     color: var(--secondary-color-dark);
 }
 
-.home-light strong{
-    color: #07409c;
-}
-
-.main-container{
+.home-dark .main-container{
     margin: 50px 0;
     width: 80%;
     height: fit-content;
@@ -30,24 +39,25 @@
     padding: 0em 2.5em 0.5em;
 }
 
-.big-input-container{
+.home-dark .big-input-container{
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
 
-.mini-input-container{
+.home-dark .mini-input-container{
     width: 210px;
     height: 30px;
     display: flex;
     justify-content: center;
     background-color: #212121;
     border-radius: 10px;
-    border: solid 2px white;
-    margin-left: 10px;
+    border: solid 2px rgba(255, 255, 255, 0.119);
+    margin-left: -3px;
+    transform: scale(1.4);
 }
 
-.big-input-container input{
+.home-dark .big-input-container input{
     padding-left: 5px;
     outline: none;
     width: 200px;
@@ -57,15 +67,15 @@
     border: transparent;
 }
 
-.big-input-container .icon{
+.home-dark .big-input-container .icon{
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 7px;
     color: var(--secondary-color-dark);
 }
 
-.countries-container{
-    margin-top: 75px;
+.home-dark .countries-container{
+    margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -74,21 +84,21 @@
     
 }
 
-.country{
-    border: solid 1px rgba(255, 255, 255, 0.623);
+.home-dark .country{
+    border: solid 1.5px rgba(255, 255, 255, 0.119);
     width: 200px;
     height: 228px;
     background-color: #212121;
     border-radius: 10px;
 }
 
-.flag-container{
+.home-dark .flag-container{
     width: 200px;
     height: 120px; 
 }
 
 
-.flag-img{
+.home-dark .flag-img{
     width: 200px;
     height: 120px;
     border-radius: 10px;
@@ -96,21 +106,127 @@
     border-bottom-right-radius: 0;    
 }
 
-.flag-container:hover{
+.home-dark .flag-container:hover{
     filter: brightness(1.08);
     cursor: pointer;
 }
-.code{
+.home-dark .code{
     text-align: center;
     margin-top: 10px;
     color: var(--secondary-color-dark);
     font-weight: bolder;
 }
-
-.name{
+.home-dark .name{
     text-align: center;
     margin-top: 10px;
     font-weight: bolder;
+}
+
+
+
+/* light theme */
+.home-light{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-light strong{
+    color: var(--light-9);
+}
+
+.home-light .main-container{
+    margin: 50px 0;
+    width: 80%;
+    height: fit-content;
+    border: solid hsla(217, 71%, 20%, 0.141) 2px;
+    background-color: var(--light-2);
+    padding: 0em 2.5em 0.5em;
+}
+
+.home-light .big-input-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.home-light .mini-input-container{
+    width: 210px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--light-1);
+    border-radius: 10px;
+    border: solid 2px hsla(217, 71%, 20%, 0.53);
+    margin-left: -3px;
+    transform: scale(1.4);
+}
+
+.home-light .big-input-container input{
+    padding-left: 5px;
+    outline: none;
+    width: 200px;
+    background-color: var(--light-1);
+    color: var(--light-11);
+    border-radius: 10px;
+    border: transparent;
+}
+
+.home-light .big-input-container .icon{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 7px;
+    color: #272562;
+}
+
+.home-light .countries-container{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 50px;
+    padding: 0 10px 20px;
     
 }
+
+.home-light .country{
+    border: solid 1.5px hsla(217, 71%, 20%, 0.454);
+    width: 200px;
+    height: 228px;
+    background-color: var(--light-1);
+    border-radius: 10px;
+}
+
+.home-light .flag-container{
+    width: 200px;
+    height: 120px; 
+}
+
+
+.home-light .flag-img{
+    width: 200px;
+    height: 120px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;    
+    border-bottom-right-radius: 0;    
+}
+
+.home-light .flag-container:hover{
+    filter: brightness(1.08);
+    cursor: pointer;
+}
+.home-light .code{
+    text-align: center;
+    margin-top: 10px;
+    color: var(--light-10);
+    font-weight: bolder;
+}
+.home-light .name{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+
 

@@ -1,3 +1,18 @@
+:root{
+  --light-1 : #e4f2fd ;
+  --light-2 : #c5e2fa;
+  --light-3 : #bbdefa;
+  --light-4 : #64b5f6;
+  --light-5 : #42a5f6;
+  --light-6 : #2196f3;
+  --light-7 : #1d89e4;
+  --light-8 : #1976d3;
+  --light-9 : #1564c0;
+  --light-10: #0e47a1;
+  --light-10: #143a78;   
+  --light-11: #0f2b58;
+}
+
 .link {
   color: #ffffff;
 }
@@ -9,7 +24,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: rgb(181, 181, 181);
+  background-color: var(--light-2);
   height: 60px;
   margin-bottom: 20px;
 }
@@ -20,7 +35,7 @@
 }
 
 .dark-logo{
-    color: #272562;
+  color: var(--light-11);
 }
 
 .middle-items {
@@ -47,7 +62,7 @@
 }
 
 .link-light {
-  color: #171f46;
+  color: var(--light-11);
   text-decoration: none;
 }
 

@@ -4,8 +4,6 @@ import { createContext, useContext, useState, useEffect} from 'react';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Navbar } from './components/Navbar';
-import { QueryClient, QueryClientProvider } from 'react-query';
-
 
 export const ThemeContext = createContext();
 
@@ -20,28 +18,18 @@ function App() {
     }
   }, [darkTheme]);
 
-  
-  const client = new QueryClient({
-    defaultOptions: {
-      queries: {
-        refetchOnWindowFocus: false
-      }
-  }});
-
   return (
-    <QueryClientProvider client={client}>
-      <ThemeContext.Provider value={{darkTheme, updateTheme}}>
-        <div className="App">
-          <Router>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-            </Routes>
-          </Router>
-        </div>
-      </ThemeContext.Provider>
-    </QueryClientProvider>
+    <ThemeContext.Provider value={{darkTheme, updateTheme}}>
+      <div className="App">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Router>
+      </div>
+    </ThemeContext.Provider>
 
 
   );
