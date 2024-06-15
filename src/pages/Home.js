@@ -4,6 +4,7 @@ import { ThemeContext } from "../App";
 import { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { Country } from "../components/Country";
 import all_countries from '../all_countries.json'
 
@@ -109,7 +110,9 @@ export const Home = () => {
                   id="input-flag"
                   placeholder="Search for a country"
                 />
-                <FontAwesomeIcon icon={faSearch} className="icon" />
+                <FontAwesomeIcon icon={faGlobe} className='icon globe'/>
+                <span class="tooltip-text">Filter countries by their continent</span>
+                <FontAwesomeIcon icon={faSearch} className="icon"/>
               </div>
             </div>
             <div className="countries-container">
@@ -147,6 +150,8 @@ export const Home = () => {
                   id="input-flag"
                   placeholder="Search for a country"
                 />
+                <FontAwesomeIcon icon={faGlobe} className='icon globe'/>
+                <span class="tooltip-text">Filter countries by their continent</span>
                 <FontAwesomeIcon icon={faSearch} className="icon" />
               </div>
             </div>

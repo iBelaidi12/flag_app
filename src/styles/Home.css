@@ -46,7 +46,7 @@
 }
 
 .home-dark .mini-input-container{
-    width: 210px;
+    width: 250px;
     height: 30px;
     display: flex;
     justify-content: center;
@@ -58,7 +58,7 @@
 }
 
 .home-dark .big-input-container input{
-    padding-left: 5px;
+    padding-left: 7px;
     outline: none;
     width: 200px;
     background-color: #212121;
@@ -72,6 +72,10 @@
     margin-right: 5px;
     margin-top: 7px;
     color: var(--secondary-color-dark);
+}
+
+.home-dark .big-input-container .globe{
+    transform: scale(1.1);
 }
 
 .home-dark .countries-container{
@@ -152,7 +156,7 @@
 }
 
 .home-light .mini-input-container{
-    width: 210px;
+    width: 250px;
     height: 30px;
     display: flex;
     justify-content: center;
@@ -178,6 +182,10 @@
     margin-right: 5px;
     margin-top: 7px;
     color: #272562;
+}
+
+.home-light .big-input-container .globe{
+    transform: scale(1.1);
 }
 
 .home-light .countries-container{
@@ -229,4 +237,72 @@
 }
 
 
+
+/* test tooltip */
+.home-dark .tooltip-text {
+    font-size: small;
+    visibility: hidden;
+    width: 240px;
+    background-color: var(--secondary-color-dark);
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 60.7%;
+    margin-left: -60px;
+}
+.home-dark .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--secondary-color-dark) transparent transparent transparent;
+}
+.home-dark .globe:hover{
+    cursor: pointer;
+}
+.home-dark .globe:hover + .tooltip-text {
+    visibility: visible;
+}
+
+
+
+
+.home-light .tooltip-text {
+    font-size: small;
+    visibility: hidden;
+    width: 240px;
+    background-color: #272562;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 60.7%;
+    margin-left: -60px;
+}
+.home-light .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #272562 transparent transparent transparent;
+}
+.home-light .globe:hover{
+    cursor: pointer;
+}
+.home-light .globe:hover + .tooltip-text {
+    visibility: visible;
+}
 
