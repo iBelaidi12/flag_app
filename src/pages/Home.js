@@ -78,7 +78,7 @@ export const Home = () => {
   let [inputCountry, setInputCountry] = useState("");
   let [dataFiltred, setDataFiltred] = useState([]);
   let [isActive, setIsActive] = useState(false)
-  let [continent, setContinent] = useState(" ")
+  let [continent, setContinent] = useState("")
 
   useEffect(() => {
     if(all_countries){
@@ -86,10 +86,21 @@ export const Home = () => {
         return a.name.common.localeCompare(b.name.common);
       });
       }
-      if(inputCountry == ""){
+      if(inputCountry == "" &&  continent == ""){
+        //no input yet
         setDataFiltred(dataSorted);
       }
+      else if(continent != ""){
+        //when deleting the search bar and a continent is set 
+        dataSorted = [...dataSorted].filter((country) => 
+          country.continents.includes(continent)
+        )
+        setDataFiltred([...dataSorted].filter((country) => 
+          country.name.common.toLowerCase().startsWith(inputCountry.toLowerCase())
+        ))
+      }
       else{
+        //when deleting the search bar and a continent is NOT set 
         setDataFiltred([...dataSorted].filter((country) => 
           country.name.common.toLowerCase().startsWith(inputCountry.toLowerCase())
       ))
@@ -100,43 +111,16 @@ export const Home = () => {
     var dataSorted = [...all_countries].sort((a, b) => {
       return a.name.common.localeCompare(b.name.common);
     });
-
-    switch(continent) {
-      case "" : 
-        setDataFiltred([...dataSorted])
-        break;
-      case "Asia" :
-        setDataFiltred([...dataSorted].filter((country) => 
-          country.continents.includes("Asia")
-        ))
-        break;
-      case "Europe" :
-        setDataFiltred([...dataSorted].filter((country) => 
-          country.continents.includes("Europe")
-        ))
-        break;
-      case "Africa" :
-        setDataFiltred([...dataSorted].filter((country) => 
-          country.continents.includes("Africa")
-        ))
-        break;
-      case "North America" :
-        setDataFiltred([...dataSorted].filter((country) => 
-          country.continents.includes("North America")
-        ))
-        break;
-      case "South America" :
-        setDataFiltred([...dataSorted].filter((country) => 
-          country.continents.includes("South America")
-        ))
-        break;
-      case "Oceania" :
-        setDataFiltred([...dataSorted].filter((country) => 
-          country.continents.includes("Oceania")
-        ))
-        break;
-            
+    
+    if(continent == ""){
+      setDataFiltred([...dataSorted])
     }
+    else{
+      setDataFiltred([...dataSorted].filter((country) => 
+        country.continents.includes(continent)
+      ))
+    }
+    
   }, [continent])
 
   const closeModal = () => {
