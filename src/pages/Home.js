@@ -7,6 +7,12 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { Country } from "../components/Country";
 import all_countries from '../all_countries.json'
+import africa from './continents/africa.png' 
+import europe from './continents/europe.png' 
+import asia from './continents/asia.png' 
+import north_am from './continents/north-am.png' 
+import south_am from './continents/south-am.png' 
+import australia from './continents/australia.png' 
 
 
 let nonTolerated = [
@@ -71,6 +77,7 @@ export const Home = () => {
 
   let [inputCountry, setInputCountry] = useState("");
   let [dataFiltred, setDataFiltred] = useState([]);
+  let [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
     if(all_countries){
@@ -92,6 +99,29 @@ export const Home = () => {
     <>
       {darkTheme ? (
         <div className="home-dark">
+            <div className={isActive ? "modal active" : "modal inactive"}>
+              <div onClick={() => {
+                  setIsActive(false)
+                  document.body.classList.toggle("active")
+              }} className="black-bg">
+
+              </div>
+              <div className="inner-container">
+                <h1>Choose a <strong>continent</strong></h1>
+                <span onClick={() => {
+                    setIsActive(false)
+                    document.body.classList.toggle("active")
+                  }} className="close-modal">&#10005;</span>
+                <div className="continents">
+                  <img src={africa} alt="" className="africa" />
+                  <img src={europe} alt="" className="europe" />
+                  <img src={asia} alt="" className="asia" />
+                  <img src={north_am} alt="" className="north-am" />
+                  <img src={south_am} alt="" className="south-am" />
+                  <img src={australia} alt="" className="australia" />
+                </div>
+              </div>
+            </div>
           <div className="greetings">
             <h1>
               You can find a bunch of <strong>flags</strong> here
@@ -110,8 +140,11 @@ export const Home = () => {
                   id="input-flag"
                   placeholder="Search for a country"
                 />
-                <FontAwesomeIcon icon={faGlobe} className='icon globe'/>
-                <span class="tooltip-text">Filter countries by their continent</span>
+                <FontAwesomeIcon onClick={() => {
+                  setIsActive(true);
+                  document.body.classList.toggle("active")
+                }} icon={faGlobe} className='icon globe'/>
+                <span className="tooltip-text">Filter countries by their continent</span>
                 <FontAwesomeIcon icon={faSearch} className="icon"/>
               </div>
             </div>
@@ -151,7 +184,7 @@ export const Home = () => {
                   placeholder="Search for a country"
                 />
                 <FontAwesomeIcon icon={faGlobe} className='icon globe'/>
-                <span class="tooltip-text">Filter countries by their continent</span>
+                <span className="tooltip-text">Filter countries by their continent</span>
                 <FontAwesomeIcon icon={faSearch} className="icon" />
               </div>
             </div>

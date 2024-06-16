@@ -238,7 +238,7 @@
 
 
 
-/* test tooltip */
+/* tooltip */
 .home-dark .tooltip-text {
     font-size: small;
     visibility: hidden;
@@ -270,9 +270,6 @@
 .home-dark .globe:hover + .tooltip-text {
     visibility: visible;
 }
-
-
-
 
 .home-light .tooltip-text {
     font-size: small;
@@ -306,3 +303,100 @@
     visibility: visible;
 }
 
+
+
+
+/* modal  */
+body.active{
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.home-dark .inactive{
+    display: none;
+}
+
+.home-dark .modal .inner-container{
+    z-index: 1;
+    position: absolute;
+    top: 3%;
+    left: 18%;
+    background-color: #191919;
+    border: hsla(217, 71%, 20%, 0.141) solid 2px; 
+    width: 1000px;
+    height: 850px;
+    padding-top: 15px;
+}
+
+.home-dark .modal .inner-container .close-modal{
+    position: absolute;
+    top: 1.5%;
+    right: 3.5%;
+    font-size: xx-large;
+    color: rgba(255, 255, 255, 0.5);
+}
+.home-dark .modal .inner-container .close-modal:hover{
+    color: rgba(255, 255, 255, 0.763);
+    cursor: pointer;
+}
+
+.home-dark .modal .inner-container h1{
+    text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.home-dark .modal .black-bg{
+    z-index: 0;
+    width: 1000em;
+    height: 1000em;
+    background-color: #000000;
+    opacity: 70%;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+}
+
+
+.continents img{
+    transform: scale(0.4);
+    margin: 0;
+    position: absolute;
+}
+.continents img:hover{
+    filter: invert(50%) sepia(81%) saturate(3109%) hue-rotate(6deg) brightness(100%) contrast(80%);
+    cursor: pointer;
+}
+.africa{
+    transform: scale(0.52) !important;
+    top: 33%;
+    right: 27%;
+}
+.south-am{
+    transform: scale(0.35) !important;
+    top: 35%;
+    left: 11%;
+}
+.north-am{
+    transform: scale(0.4) !important;
+    top: 0%;
+    left: -10%;
+}
+.australia{
+    transform: scale(0.3) !important;
+    bottom: 10%;
+    right: 0%;
+}
+.europe{
+    transform: scale(0.52) !important;
+    top: 14%;
+    right: 23%;
+    filter: brightness(95%);
+}
+.asia{
+    /* visibility: hidden; */
+    transform: scale(0.43) !important;
+    filter: brightness(95%);
+    top: -11%;
+    right: -27.5%;
+}
