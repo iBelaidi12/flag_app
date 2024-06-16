@@ -78,6 +78,7 @@ export const Home = () => {
   let [inputCountry, setInputCountry] = useState("");
   let [dataFiltred, setDataFiltred] = useState([]);
   let [isActive, setIsActive] = useState(false)
+  let [continent, setContinent] = useState(" ")
 
   useEffect(() => {
     if(all_countries){
@@ -95,30 +96,104 @@ export const Home = () => {
       }
   }, [inputCountry, all_countries])
 
+  useEffect(() => {
+    var dataSorted = [...all_countries].sort((a, b) => {
+      return a.name.common.localeCompare(b.name.common);
+    });
+
+    switch(continent) {
+      case "" : 
+        setDataFiltred([...dataSorted])
+        break;
+      case "Asia" :
+        setDataFiltred([...dataSorted].filter((country) => 
+          country.continents.includes("Asia")
+        ))
+        break;
+      case "Europe" :
+        setDataFiltred([...dataSorted].filter((country) => 
+          country.continents.includes("Europe")
+        ))
+        break;
+      case "Africa" :
+        setDataFiltred([...dataSorted].filter((country) => 
+          country.continents.includes("Africa")
+        ))
+        break;
+      case "North America" :
+        setDataFiltred([...dataSorted].filter((country) => 
+          country.continents.includes("North America")
+        ))
+        break;
+      case "South America" :
+        setDataFiltred([...dataSorted].filter((country) => 
+          country.continents.includes("South America")
+        ))
+        break;
+      case "Oceania" :
+        setDataFiltred([...dataSorted].filter((country) => 
+          country.continents.includes("Oceania")
+        ))
+        break;
+            
+    }
+  }, [continent])
+
+  const closeModal = () => {
+    setIsActive(false)
+    document.body.classList.toggle("active")
+  }
+
   return (
     <>
       {darkTheme ? (
         <div className="home-dark">
             <div className={isActive ? "modal active" : "modal inactive"}>
               <div onClick={() => {
-                  setIsActive(false)
-                  document.body.classList.toggle("active")
+                  closeModal()
               }} className="black-bg">
 
               </div>
               <div className="inner-container">
                 <h1>Choose a <strong>continent</strong></h1>
+                <h4 onClick={() => {
+                  setContinent("")
+                  closeModal()
+                }}>Reset the filter</h4>
                 <span onClick={() => {
-                    setIsActive(false)
-                    document.body.classList.toggle("active")
+                    closeModal()
                   }} className="close-modal">&#10005;</span>
                 <div className="continents">
-                  <img src={africa} alt="" className="africa" />
-                  <img src={europe} alt="" className="europe" />
-                  <img src={asia} alt="" className="asia" />
-                  <img src={north_am} alt="" className="north-am" />
-                  <img src={south_am} alt="" className="south-am" />
-                  <img src={australia} alt="" className="australia" />
+                  
+                  <img onClick = {() => {
+                    setContinent("Africa")
+                    closeModal()
+                  }} src={africa} alt="" className="africa" />
+                  
+                  <img onClick = {() => {
+                    setContinent("Europe")
+                    closeModal()
+                  }} src={europe} alt="" className="europe" />
+                  
+                  <img onClick = {() => {
+                    setContinent("Asia")
+                    closeModal()
+                  }} src={asia} alt="" className="asia" />
+                  
+                  <img onClick = {() => {
+                    setContinent("North America")
+                    closeModal()
+                  }} src={north_am} alt="" className="north-am" />
+                  
+                  <img onClick = {() => {
+                    setContinent("South America")
+                    closeModal()
+                  }} src={south_am} alt="" className="south-am" />
+                  
+                  <img onClick = {() => {
+                    setContinent("Oceania")
+                    closeModal()
+                  }} src={australia} alt="" className="australia" />
                 </div>
               </div>
             </div>

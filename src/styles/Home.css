@@ -345,6 +345,15 @@ body.active{
     margin-top: 30px;
     text-transform: uppercase;
 }
+.home-dark .modal .inner-container h4{
+    text-align: center;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+.home-dark .modal .inner-container h4:hover{
+    cursor: pointer;
+    color: var(--secondary-color-dark);
+}
 
 .home-dark .modal .black-bg{
     z-index: 0;
