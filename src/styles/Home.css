@@ -433,8 +433,15 @@ body.active{
     filter: invert(50%) sepia(81%) saturate(3109%) hue-rotate(6deg) brightness(100%) contrast(80%);
     cursor: pointer;
 }
+
+.home-light .continents img{
+    transform: scale(0.4);
+    margin: 0;
+    position: absolute;
+    filter: brightness(0) saturate(100%) invert(92%) sepia(25%) saturate(33%) hue-rotate(162deg) brightness(96%) contrast(110%);
+}
 .home-light .continents img:hover{
-    filter: invert(35%) sepia(19%) saturate(3566%) hue-rotate(184deg) brightness(93%) contrast(105%);
+    filter: invert(67%) sepia(56%) saturate(4215%) hue-rotate(182deg) brightness(100%) contrast(93%);
     cursor: pointer;
 }
 .africa{
