@@ -136,7 +136,6 @@ export const Home = () => {
               <div onClick={() => {
                   closeModal()
               }} className="black-bg">
-
               </div>
               <div className="inner-container">
                 <h1>Choose a <strong>continent</strong></h1>
@@ -224,6 +223,54 @@ export const Home = () => {
         </div>
       ) : (
         <div className="home-light">
+          <div className={isActive ? "modal active" : "modal inactive"}>
+            <div onClick={() => {
+                closeModal()
+            }} className="black-bg">
+            </div>
+            <div className="inner-container">
+              <h1>Choose a <strong>continent</strong></h1>
+              <h4 onClick={() => {
+                setContinent("")
+                closeModal()
+              }}>Reset the filter</h4>
+              <span onClick={() => {
+                  closeModal()
+                }} className="close-modal">&#10005;</span>
+              <div className="continents">
+                
+                <img onClick = {() => {
+                  setContinent("Africa")
+                  closeModal()
+                }} src={africa} alt="" className="africa" />
+                
+                <img onClick = {() => {
+                  setContinent("Europe")
+                  closeModal()
+                }} src={europe} alt="" className="europe" />
+                
+                <img onClick = {() => {
+                  setContinent("Asia")
+                  closeModal()
+                }} src={asia} alt="" className="asia" />
+                
+                <img onClick = {() => {
+                  setContinent("North America")
+                  closeModal()
+                }} src={north_am} alt="" className="north-am" />
+                
+                <img onClick = {() => {
+                  setContinent("South America")
+                  closeModal()
+                }} src={south_am} alt="" className="south-am" />
+                
+                <img onClick = {() => {
+                  setContinent("Oceania")
+                  closeModal()
+                }} src={australia} alt="" className="australia" />
+              </div>
+            </div>
+          </div>
           <div className="greetings">
             <h1>
               You can find a bunch of <strong>flags</strong> here
@@ -242,7 +289,10 @@ export const Home = () => {
                   id="input-flag"
                   placeholder="Search for a country"
                 />
-                <FontAwesomeIcon icon={faGlobe} className='icon globe'/>
+                <FontAwesomeIcon onClick={() => {
+                  setIsActive(true);
+                  document.body.classList.toggle("active")
+                }} icon={faGlobe} className='icon globe'/>
                 <span className="tooltip-text">Filter countries by their continent</span>
                 <FontAwesomeIcon icon={faSearch} className="icon" />
               </div>

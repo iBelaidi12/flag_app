@@ -322,7 +322,7 @@ body.active{
     top: 3%;
     left: 18%;
     background-color: #191919;
-    border: hsla(217, 71%, 20%, 0.141) solid 2px; 
+    border: hsla(0, 0%, 100%, 0.068) solid 2px; 
     width: 1000px;
     height: 850px;
     padding-top: 15px;
@@ -346,7 +346,8 @@ body.active{
     text-transform: uppercase;
 }
 .home-dark .modal .inner-container h4{
-    text-align: center;
+    display: inline;
+    margin: 26em;
     margin-top: 5px;
     text-transform: uppercase;
 }
@@ -367,13 +368,73 @@ body.active{
 }
 
 
+.home-light .inactive{
+    display: none;
+}
+
+.home-light .modal .inner-container{
+    z-index: 1;
+    position: absolute;
+    top: 3%;
+    left: 18%;
+    background-color: var(--light-2);
+    border: hsla(217, 71%, 20%, 0.141) solid 2px; 
+    width: 1000px;
+    height: 850px;
+    padding-top: 15px;
+}
+
+.home-light .modal .inner-container .close-modal{
+    position: absolute;
+    top: 1.5%;
+    right: 3.5%;
+    font-size: xx-large;
+    color: rgba(0, 0, 0, 0.457);
+}
+.home-light .modal .inner-container .close-modal:hover{
+    color: rgba(0, 0, 0, 0.847);
+    cursor: pointer;
+}
+
+.home-light .modal .inner-container h1{
+    text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+.home-light .modal .inner-container h4{
+    display: inline;
+    margin: 26em;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+.home-light .modal .inner-container h4:hover{
+    cursor: pointer;
+    color: var(--light-9);
+}
+
+.home-light .modal .black-bg{
+    z-index: 0;
+    width: 1000em;
+    height: 1000em;
+    background-color: #000000;
+    opacity: 80%;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+}
+
+
 .continents img{
     transform: scale(0.4);
     margin: 0;
     position: absolute;
 }
-.continents img:hover{
+.home-dark .continents img:hover{
     filter: invert(50%) sepia(81%) saturate(3109%) hue-rotate(6deg) brightness(100%) contrast(80%);
+    cursor: pointer;
+}
+.home-light .continents img:hover{
+    filter: invert(35%) sepia(19%) saturate(3566%) hue-rotate(184deg) brightness(93%) contrast(105%);
     cursor: pointer;
 }
 .africa{
