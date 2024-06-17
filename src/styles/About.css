@@ -17,12 +17,14 @@
     left: -55%;
 }
 
-.dark strong{
-    color: #e3930a;
-}
-
 .about-container .inner-container{
     display: grid;
+}
+
+
+
+.dark strong{
+    color: #e3930a;
 }
 
 .dark.about-container .about-text{
@@ -31,15 +33,25 @@
     position: absolute;
     top: 25%;
     left: 55%;
-    /* background-color: #191919; */
-    /* border: hsla(0, 0%, 100%, 0.068) solid 2px; */
     padding: 25px;
     line-height: 1.6;
     transform: scale(1);
 }
 
+.light strong{
+    color: #e3930a;
+}
 
-
+.light.about-container .about-text{
+    width: 35%;
+    font-size: 1.6em;
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    padding: 25px;
+    line-height: 1.6;
+    transform: scale(1);
+}
 
 
 
