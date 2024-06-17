@@ -38,9 +38,6 @@
     transform: scale(1);
 }
 
-.light strong{
-    color: #e3930a;
-}
 
 .light.about-container .about-text{
     width: 35%;
